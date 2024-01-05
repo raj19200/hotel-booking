@@ -1,7 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 import styled from "styled-components";
 import Logo from "../ui/Logo";
 import Heading from "../ui/Heading";
 import LoginForm from "../features/authentication/LoginForm";
+import { useNavigate } from "react-router-dom";
 
 const LoginLayout = styled.main`
   min-height: 100vh;
@@ -14,12 +16,21 @@ const LoginLayout = styled.main`
 `;
 
 function Login() {
+  const navigate = useNavigate();
   return (
-    <LoginLayout>
-      <Logo />
-      <Heading as="h4">Log in to your account</Heading>
-      <LoginForm />
-    </LoginLayout>
+    <>
+      <LoginLayout>
+        <Logo />
+        <Heading as="h4">Log in to your account</Heading>
+        <LoginForm />
+        <p style={{ textAlign: "center" }}>
+          Don't have an account?{" "}
+          <a style={{ color: "blue" }} onClick={() => navigate("/register")}>
+            Sign Up
+          </a>
+        </p>
+      </LoginLayout>
+    </>
   );
 }
 
