@@ -1,1 +1,2 @@
-https://hotel-booking-practice.netlify.app/login
+https://hotel-booking-practice.netlify.app
+
